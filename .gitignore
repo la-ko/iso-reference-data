@@ -6,11 +6,11 @@
 *.ear
 
 # IntelliJ
-.idea
+.idea/**
 *.idea_modules
 *.settings
 *.iml
 
 # Gradle
-.gradle
-build
+.gradle/**
+build/**
