@@ -1,3 +1,16 @@
-.gradle
+*.class
+
+# Package files
+*.jar
+*.war
+*.ear
+
+# IntelliJ
 .idea
+*.idea_modules
+*.settings
+*.iml
+
+# Gradle
+.gradle
 build
