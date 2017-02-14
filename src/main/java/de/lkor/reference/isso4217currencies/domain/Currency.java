@@ -1,6 +1,7 @@
 package de.lkor.reference.isso4217currencies.domain;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
@@ -17,6 +18,7 @@ import java.util.Date;
 public
 @Data
 @RequiredArgsConstructor
+@NoArgsConstructor
 @Entity
 class Currency {
     @Id
