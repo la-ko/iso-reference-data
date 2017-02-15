@@ -9,7 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.Date;
 
 /**
@@ -21,9 +21,10 @@ public
 @NoArgsConstructor
 @Entity
 class Currency {
+    @NonNull
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private BigDecimal id;
+    //@GeneratedValue(strategy = GenerationType.AUTO)
+    private String id;
 
     @NonNull
     private String currency;
@@ -31,10 +32,9 @@ class Currency {
     @NonNull
     private String alphabeticCode;
 
-    @NonNull
     private String numericCode;
 
     private String minorUnit;
-    private Date withdrawalDate;
+    private String withdrawalDate;
     private String remark;
 }
