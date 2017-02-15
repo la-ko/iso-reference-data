@@ -14,7 +14,7 @@ public class CurrencyTest {
     public void shouldSetCurrency() {
         // Given
         String euro = "Euro";
-        Currency currency = new Currency(euro, "EUR", "978");
+        Currency currency = new Currency("x", euro, "EUR");
 
         // When
         currency.setCurrency(euro);

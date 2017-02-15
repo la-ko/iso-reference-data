@@ -27,14 +27,14 @@ public class CurrencyRepositoryTest {
 
     @Before
     public void setUp() {
-        Currency currency = new Currency("US Dollar", "USD", "840");
+        Currency currency = new Currency("x", "US Dollar", "USD");
         currencyRepository.save(currency);
     }
 
     @Test
     public void shouldSaveCurrency() {
         // Given
-        Currency currency = new Currency("Euro", "EUR", "978");
+        Currency currency = new Currency("x", "Euro", "EUR");
 
         // When
         Currency savedCurrency = currencyRepository.save(currency);
