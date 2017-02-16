@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/iso4217-currencies.iml" filepath="$PROJECT_DIR$/.idea/modules/iso4217-currencies.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/iso4217-currencies_main.iml" filepath="$PROJECT_DIR$/.idea/modules/iso4217-currencies_main.iml" group="iso4217-currencies" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/iso4217-currencies_test.iml" filepath="$PROJECT_DIR$/.idea/modules/iso4217-currencies_test.iml" group="iso4217-currencies" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/iso-reference-data.iml" filepath="$PROJECT_DIR$/.idea/modules/iso-reference-data.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/iso-reference-data_main.iml" filepath="$PROJECT_DIR$/.idea/modules/iso-reference-data_main.iml" group="iso-reference-data" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/iso-reference-data_test.iml" filepath="$PROJECT_DIR$/.idea/modules/iso-reference-data_test.iml" group="iso-reference-data" />
     </modules>
   </component>
 </project>
