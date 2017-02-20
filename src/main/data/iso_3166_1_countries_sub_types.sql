@@ -1,0 +1,12 @@
+INSERT INTO country_sub_type (id, name) VALUES ('45787465726e616c205465727269746f7279', 'External Territory');
+INSERT INTO country_sub_type (id, name) VALUES ('5375692067656e6572697320436f6c6c6563746976697479', 'Sui generis Collectivity');
+INSERT INTO country_sub_type (id, name) VALUES ('4f7665727365617320436f6c6c6563746976697479', 'Overseas Collectivity');
+INSERT INTO country_sub_type (id, name) VALUES ('4f76657273656173205465727269746f7279', 'Overseas Territory');
+INSERT INTO country_sub_type (id, name) VALUES ('506f7373657373696f6e', 'Possession');
+INSERT INTO country_sub_type (id, name) VALUES ('5465727269746f7279', 'Territory');
+INSERT INTO country_sub_type (id, name) VALUES ('53656c662d476f7665726e696e6720696e2046726565204173736f63696174696f6e', 'Self-Governing in Free Association');
+INSERT INTO country_sub_type (id, name) VALUES ('43726f776e20446570656e64656e6379', 'Crown Dependency');
+INSERT INTO country_sub_type (id, name) VALUES ('436f6d6d6f6e7765616c7468', 'Commonwealth');
+INSERT INTO country_sub_type (id, name) VALUES ('5370656369616c2041646d696e69737472617469766520526567696f6e', 'Special Administrative Region');
+INSERT INTO country_sub_type (id, name) VALUES ('4f7665727365617320526567696f6e', 'Overseas Region');
+INSERT INTO country_sub_type (id, name) VALUES ('446570656e64656e6379206f66205361696e742048656c656e61', 'Dependency of Saint Helena');
