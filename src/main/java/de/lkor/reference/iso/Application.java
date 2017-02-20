@@ -1,7 +1,6 @@
-package de.lkor.reference.isso4217currencies;
+package de.lkor.reference.iso;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**

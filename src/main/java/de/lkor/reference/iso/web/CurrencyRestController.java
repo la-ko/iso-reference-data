@@ -1,7 +1,7 @@
-package de.lkor.reference.isso4217currencies.web;
+package de.lkor.reference.iso.web;
 
-import de.lkor.reference.isso4217currencies.domain.Currency;
-import de.lkor.reference.isso4217currencies.domain.CurrencyRepository;
+import de.lkor.reference.iso.domain.entity.Currency;
+import de.lkor.reference.iso.domain.repository.CurrencyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
