@@ -1,6 +1,5 @@
-package de.lkor.reference.isso4217currencies.domain;
+package de.lkor.reference.iso.domain.entity;
 
-import de.lkor.reference.isso4217currencies.domain.Currency;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
