@@ -11,14 +11,13 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 /**
  * Created by lako on 14.02.2017.
  */
 @RestController
-@RequestMapping("/currencies")
+@RequestMapping("/rest/v1/currencies")
 public class CurrencyRestController {
     private final CurrencyRepository currencyRepository;
 
@@ -28,11 +27,11 @@ public class CurrencyRestController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    Collection<Currency> retrieveCurrencies() {
-        List<Currency> currencyList = new ArrayList<>();
-        this.currencyRepository.findAll().forEach(currency -> currencyList.add(currency));
+    List<Currency> retrieveCurrencies() {
+        List<Currency> currencies = new ArrayList<>();
+        this.currencyRepository.findAll().forEach(currency -> currencies.add(currency));
 
-        return currencyList;
+        return currencies;
     }
 
     @RequestMapping(method = RequestMethod.POST)

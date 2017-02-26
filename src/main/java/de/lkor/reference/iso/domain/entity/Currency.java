@@ -10,7 +10,7 @@ import javax.persistence.Entity;
  */
 public
 @Data
-@EqualsAndHashCode(callSuper = true, of = {"currency"})
+@EqualsAndHashCode(callSuper = false, of = {"currency"})
 @NoArgsConstructor
 @Entity
 class Currency extends EntityBase {

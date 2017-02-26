@@ -1,9 +1,6 @@
 package de.lkor.reference.iso.domain.entity;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
+import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -28,8 +25,9 @@ import javax.persistence.ManyToOne;
 // ISO 3166-1 Number,
 // IANA Country Code TLD
 @Data
-@EqualsAndHashCode(callSuper = true, of = {"commonName"})
+@EqualsAndHashCode(callSuper = false, of = {"commonName"})
 @NoArgsConstructor
+@RequiredArgsConstructor
 @Entity
 public class Country extends EntityBase {
     @NonNull
