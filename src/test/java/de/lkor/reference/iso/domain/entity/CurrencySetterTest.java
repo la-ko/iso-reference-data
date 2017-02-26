@@ -8,7 +8,7 @@ import static org.hamcrest.CoreMatchers.*;
 /**
  * Created by lako on 13.02.2017.
  */
-public class CurrencyTest {
+public class CurrencySetterTest {
     @Test
     public void shouldSetCurrency() {
         // Given

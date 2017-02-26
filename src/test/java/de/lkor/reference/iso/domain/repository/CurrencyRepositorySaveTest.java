@@ -1,5 +1,6 @@
-package de.lkor.reference.iso.domain.entity;
+package de.lkor.reference.iso.domain.repository;
 
+import de.lkor.reference.iso.domain.entity.Currency;
 import de.lkor.reference.iso.domain.repository.CurrencyRepository;
 import org.junit.Before;
 import org.junit.Test;
@@ -21,16 +22,7 @@ import static org.junit.Assert.assertThat;
 @RunWith(SpringRunner.class)
 @DataJpaTest
 @Transactional(propagation = Propagation.NOT_SUPPORTED)
-public class CurrencyRepositoryTest {
-    @Autowired
-    private CurrencyRepository currencyRepository;
-
-    @Before
-    public void setUp() {
-        Currency currency = new Currency("x", "Test 1", "TS1");
-        currencyRepository.save(currency);
-    }
-
+public class CurrencyRepositorySaveTest extends CurrencyRepositoryTestBase {
     @Test
     public void shouldSaveCurrency() {
         // Given
@@ -41,17 +33,5 @@ public class CurrencyRepositoryTest {
 
         // Then
         assertThat(savedCurrency.getId(), is(notNullValue()));
-    }
-
-    @Test
-    public void shouldFindCurrencyByCurrency() {
-        // Given
-        final String currencyName = "Test 1";
-
-        // When
-        final List<Currency> foundCurrencies = currencyRepository.findByCurrency(currencyName);
-
-        // Then
-        assertThat(foundCurrencies.get(0).getAlphabeticCode(), is(equalTo("TS1")));
     }
 }
