@@ -1,6 +1,6 @@
 package de.lkor.reference.iso;
 
-import de.lkor.reference.iso.domain.event.CountryEventHandler;
+import de.lkor.reference.iso.domain.event.EntityBaseEventHandler;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -15,7 +15,7 @@ public class Application {
     }
 
     @Bean
-    CountryEventHandler countryEventHandler() {
-        return new CountryEventHandler();
+    EntityBaseEventHandler countryEventHandler() {
+        return new EntityBaseEventHandler();
     }
 }

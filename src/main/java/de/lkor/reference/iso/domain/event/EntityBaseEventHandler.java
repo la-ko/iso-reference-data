@@ -9,7 +9,7 @@ import org.springframework.data.rest.core.annotation.RepositoryEventHandler;
 import java.util.Date;
 
 @RepositoryEventHandler(EntityBase.class)
-public class CountryEventHandler {
+public class EntityBaseEventHandler {
     @Autowired
     private DomainEventRepository domainEventRepository;
 
