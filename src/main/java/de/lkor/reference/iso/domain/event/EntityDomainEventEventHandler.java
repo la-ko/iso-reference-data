@@ -2,22 +2,32 @@ package de.lkor.reference.iso.domain.event;
 
 import de.lkor.reference.iso.domain.entity.EntityBase;
 import de.lkor.reference.iso.domain.repository.DomainEventRepository;
+import lombok.NonNull;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.data.rest.core.annotation.HandleAfterSave;
 import org.springframework.data.rest.core.annotation.RepositoryEventHandler;
 
 import java.util.Date;
 
+@Slf4j
 @RepositoryEventHandler(EntityBase.class)
-public class EntityBaseEventHandler {
+public class EntityDomainEventEventHandler {
     @Autowired
     private DomainEventRepository domainEventRepository;
 
+    @Autowired
+    private ApplicationEventPublisher publisher;
+
     @HandleAfterSave
-    public void handleAfterSave(EntityBase entity) {
+    public void saveDomainEvent(EntityBase entity) {
         final DomainEvent domainEvent = assembleDomainEvent(entity, ChangeIndicator.CREATED.UPDATED);
 
-        domainEventRepository.save(domainEvent);
+        final DomainEvent savedDomainEvent = domainEventRepository.save(domainEvent);
+        log.info("Saved domain event {}", savedDomainEvent.getId());
+
+        publisher.publishEvent(domainEvent);
     }
 
     private DomainEvent assembleDomainEvent(EntityBase entity, ChangeIndicator changeIndicator) {

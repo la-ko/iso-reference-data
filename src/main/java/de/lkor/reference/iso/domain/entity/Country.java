@@ -1,29 +1,13 @@
 package de.lkor.reference.iso.domain.entity;
 
 import lombok.*;
+import org.springframework.data.rest.core.annotation.RestResource;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-/**
- * Created by lako on 16.02.2017.
- */
-// Sort Order,
-// Common Name,
-// Formal Name,
-// Type,
-// Sub Type,
-// Sovereignty,
-// Capital,
-// ISO 4217 Currency Code,
-// ISO 4217 Currency Name,
-// ITU-T Telephone Code,
-// ISO 3166-1 2 Letter Code,
-// ISO 3166-1 3 Letter Code,
-// ISO 3166-1 Number,
-// IANA Country Code TLD
 @Data
 @EqualsAndHashCode(callSuper = false, of = {"commonName"})
 @NoArgsConstructor
@@ -37,7 +21,6 @@ public class Country extends EntityBase {
     @Column(unique = true)
     private String formalName;
 
-    @NonNull
     @ManyToOne(optional = false)
     @JoinColumn(name = "type")
     private CountryType type;

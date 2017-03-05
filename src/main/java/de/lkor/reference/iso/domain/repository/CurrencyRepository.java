@@ -7,9 +7,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-/**
- * Created by lako on 13.02.2017.
- */
 @Component
 public interface CurrencyRepository extends PagingAndSortingRepository<Currency, String> {
     List<Currency> findByCurrency(@Param("currency") String currency);

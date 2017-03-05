@@ -1,9 +1,6 @@
 package de.lkor.reference.iso.domain.entity;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
@@ -12,10 +9,9 @@ import javax.persistence.Version;
 
 @Data
 @NoArgsConstructor
-@RequiredArgsConstructor
+@AllArgsConstructor
 @MappedSuperclass
 public abstract class EntityBase {
-    @NonNull
     @Id
     String id;
 

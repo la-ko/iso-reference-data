@@ -11,6 +11,7 @@ import java.util.Date;
 @NoArgsConstructor
 @EqualsAndHashCode(of = {"type", "objectId", "objectVersion", "changeIndicator"})
 @Entity
+// TODO add global version; add UUID
 public class DomainEvent {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

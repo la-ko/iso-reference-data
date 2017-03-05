@@ -5,15 +5,11 @@ import lombok.*;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
-/**
- * Created by lako on 12.02.2017.
- */
-public
 @Data
 @EqualsAndHashCode(callSuper = false, of = {"currency"})
 @NoArgsConstructor
 @Entity
-class Currency extends EntityBase {
+public class Currency extends EntityBase {
     @Column(unique = true)
     private String currency;
 
@@ -26,7 +22,7 @@ class Currency extends EntityBase {
     private String remark;
 
     public Currency(final String id, final String currency, final String alphabeticCode) {
-        super(id);
+        super(id, 0L);
         this.currency = currency;
         this.alphabeticCode = alphabeticCode;
     }

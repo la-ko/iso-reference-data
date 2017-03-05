@@ -13,9 +13,6 @@ import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by lako on 14.02.2017.
- */
 @RestController
 @RequestMapping("/rest/v1/currencies")
 public class CurrencyRestController {
