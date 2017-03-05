@@ -8,25 +8,22 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.assertThat;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest
 @Transactional(propagation = Propagation.NOT_SUPPORTED)
-public class CurrencyRepositoryFindCurrencyByCurrencyTest extends CurrencyRepositoryTestBase {
+public class CurrencyRepositorySaveIntegrationTest extends CurrencyRepositoryIntegrationTestBase {
     @Test
-    public void shouldFindCurrencyByCurrency() {
+    public void shouldSaveCurrency() {
         // Given
-        final String currencyName = "Test 1";
+        Currency currency = new Currency("y", "Test 2", "TS2");
 
         // When
-        final List<Currency> foundCurrencies = currencyRepository.findByCurrency(currencyName);
+        Currency savedCurrency = currencyRepository.save(currency);
 
         // Then
-        assertThat(foundCurrencies.get(0).getAlphabeticCode(), is(equalTo("TS1")));
+        assertThat(savedCurrency.getId(), is(notNullValue()));
     }
 }

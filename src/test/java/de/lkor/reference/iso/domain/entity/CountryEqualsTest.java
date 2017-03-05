@@ -36,14 +36,14 @@ public class CountryEqualsTest {
     }
 
     private Country createCountry() {
-        return new Country("commonName", new CountryType("Independent State"), "AB");
+        return new Country("commonName", "AB");
     }
 
     private Country createCountryWithSameCommonName() {
-        return new Country("commonName", new CountryType("Independent State"), "CD");
+        return new Country("commonName", "CD");
     }
 
     private Country createCountryWithDifferentCommonName() {
-        return new Country("commonNameTwo", new CountryType("Independent State"), "AB");
+        return new Country("commonNameTwo", "AB");
     }
 }
