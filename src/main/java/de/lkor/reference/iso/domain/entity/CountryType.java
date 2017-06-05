@@ -5,9 +5,6 @@ import lombok.*;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
-/**
- * Created by lako on 16.02.2017.
- */
 @Data
 @EqualsAndHashCode(callSuper = false, of = {"name"})
 @NoArgsConstructor

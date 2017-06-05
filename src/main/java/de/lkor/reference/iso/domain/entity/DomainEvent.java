@@ -1,4 +1,4 @@
-package de.lkor.reference.iso.domain.event;
+package de.lkor.reference.iso.domain.entity;
 
 import lombok.*;
 
