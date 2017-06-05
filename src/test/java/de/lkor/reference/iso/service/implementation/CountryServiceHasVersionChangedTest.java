@@ -2,7 +2,6 @@ package de.lkor.reference.iso.service.implementation;
 
 import de.lkor.reference.iso.domain.entity.Country;
 import de.lkor.reference.iso.domain.testutil.TestCountryFactory;
-import de.lkor.reference.iso.service.ICountryService;
 
 import static org.junit.Assert.*;
 import static org.hamcrest.Matchers.*;
@@ -18,7 +17,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @SpringBootTest
 public class CountryServiceHasVersionChangedTest {
     @Autowired
-    private CountryService objectUnderTest;
+    private CountryServiceImp objectUnderTest;
 
     @Autowired
     private TestCountryFactory countryFactory;

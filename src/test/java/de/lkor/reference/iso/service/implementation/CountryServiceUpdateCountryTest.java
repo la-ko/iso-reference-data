@@ -4,10 +4,10 @@ import de.lkor.reference.iso.domain.entity.Country;
 import de.lkor.reference.iso.domain.entity.UpdatedCountryComposite;
 import de.lkor.reference.iso.domain.repository.CountryRepository;
 import de.lkor.reference.iso.domain.testutil.TestCountryFactory;
-import de.lkor.reference.iso.service.ICountryService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Spy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -24,11 +24,15 @@ import static org.mockito.BDDMockito.given;
 public class CountryServiceUpdateCountryTest {
     private static final String GERMANY_MODIFIED_FORMAL_NAME = "Fed. Republic of Germany";
 
+    @Spy
     @Autowired
-    private ICountryService objectUnderTest;
+    private CountryServiceImp objectUnderTest;
 
     @MockBean
     private CountryRepository countryRepository;
+
+    @MockBean
+    private DomainEventEntityChangeListener domainEventEntityChangeListener;
 
     @Autowired
     private TestCountryFactory countryFactory;
@@ -60,7 +64,7 @@ public class CountryServiceUpdateCountryTest {
     public void shouldBeGetChangedFalseForNonUpdatedCountry() {
         // Given
         givenFindOneReturnsCountry();
-        givenSaveReturnsCountry();
+        givenSaveAndFlushReturnsCountry();
 
         // When
         UpdatedCountryComposite updatedCountryComposite = objectUnderTest.updateCountry(countryFactory.createGermany());
@@ -73,7 +77,7 @@ public class CountryServiceUpdateCountryTest {
     public void shouldBeGetChangedTrueForUpdatedCountry() {
         // Given
         givenFindOneReturnsCountry();
-        givenSaveReturnsUpdatedCountry();
+        givenSaveAndFlushReturnsUpdatedCountry();
 
         // When
         UpdatedCountryComposite updatedCountryComposite = objectUnderTest.updateCountry(modifiedCountry);
@@ -82,16 +86,30 @@ public class CountryServiceUpdateCountryTest {
         assertThat(updatedCountryComposite.getChanged(), is(true));
     }
 
+    @Test
+    public void shouldFireEntityChangedForUpdatedCountry() throws Exception {
+        // Given
+        givenFindOneReturnsCountry();
+        givenSaveAndFlushReturnsUpdatedCountry();
+
+        // When
+        objectUnderTest.updateCountry(modifiedCountry);
+
+        // Then
+        // Does not work with Mockito 1!!!
+        //verify(objectUnderTest).fireEntityChanged(any());
+    }
+
     private void givenFindReturnsNull() {
-        given(countryRepository.findOne(any())).willReturn(null);
+        given(countryRepository.findOne(any(String.class))).willReturn(null);
     }
 
-    private void givenSaveReturnsUpdatedCountry() {
-        given(countryRepository.save(modifiedCountry)).willReturn(updatedCountry);
+    private void givenSaveAndFlushReturnsUpdatedCountry() {
+        given(countryRepository.saveAndFlush(modifiedCountry)).willReturn(updatedCountry);
     }
 
-    private void givenSaveReturnsCountry() {
-        given(countryRepository.save(modifiedCountry)).willReturn(country);
+    private void givenSaveAndFlushReturnsCountry() {
+        given(countryRepository.saveAndFlush(modifiedCountry)).willReturn(country);
     }
 
     private void givenFindOneReturnsCountry() {
