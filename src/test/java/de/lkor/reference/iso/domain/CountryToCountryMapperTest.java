@@ -1,23 +1,24 @@
 package de.lkor.reference.iso.domain;
 
-import de.lkor.reference.iso.Application;
+import de.lkor.reference.iso.MappingConfiguration;
+import de.lkor.reference.iso.TestSpringConfiguration;
 import de.lkor.reference.iso.domain.entity.Country;
 import de.lkor.reference.iso.domain.entity.CountryType;
-import de.lkor.reference.iso.domain.testutil.TestCountryFactory;
+import de.lkor.reference.iso.domain.test.util.TestCountryFactory;
 import ma.glasnost.orika.MapperFacade;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
-@RunWith(SpringRunner.class)
-@ContextConfiguration(classes = {Application.class})
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(classes = {TestSpringConfiguration.class, MappingConfiguration.class})
 public class CountryToCountryMapperTest {
     @Autowired
     private MapperFacade objectUnderTest;

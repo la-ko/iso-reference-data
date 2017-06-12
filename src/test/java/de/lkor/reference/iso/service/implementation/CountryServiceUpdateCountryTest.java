@@ -3,7 +3,7 @@ package de.lkor.reference.iso.service.implementation;
 import de.lkor.reference.iso.domain.entity.Country;
 import de.lkor.reference.iso.domain.entity.UpdatedCountryComposite;
 import de.lkor.reference.iso.domain.repository.CountryRepository;
-import de.lkor.reference.iso.domain.testutil.TestCountryFactory;
+import de.lkor.reference.iso.domain.test.util.TestCountryFactory;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

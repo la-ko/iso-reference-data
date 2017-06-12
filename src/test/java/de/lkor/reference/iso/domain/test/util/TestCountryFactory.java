@@ -1,4 +1,4 @@
-package de.lkor.reference.iso.domain.testutil;
+package de.lkor.reference.iso.domain.test.util;
 
 import de.lkor.reference.iso.domain.entity.Country;
 import de.lkor.reference.iso.domain.entity.CountryType;

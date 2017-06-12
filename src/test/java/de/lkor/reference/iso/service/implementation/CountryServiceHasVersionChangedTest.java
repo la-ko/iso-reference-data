@@ -1,7 +1,7 @@
 package de.lkor.reference.iso.service.implementation;
 
 import de.lkor.reference.iso.domain.entity.Country;
-import de.lkor.reference.iso.domain.testutil.TestCountryFactory;
+import de.lkor.reference.iso.domain.test.util.TestCountryFactory;
 
 import static org.junit.Assert.*;
 import static org.hamcrest.Matchers.*;
